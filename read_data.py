@@ -21,6 +21,8 @@ if __name__ == "__main__":
 
     pprint(df)
 
+    connection.close()
+    engine.dispose()
 
 
 
