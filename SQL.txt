@@ -1,1 +1,7 @@
 SELECT a.origin_city_name,a.arr_delay_new, a.dep_time_blk, a.fl_date,a.fl_num,a.unique_carrier,a.origin_state_abr, b.events,b.conditions FROM table2010 a INNER JOIN weather_data_04 b ON a.arr_delay_new >15 AND a.origin_city_name=b.city AND a.origin_state_abr=b.state AND a.dep_time_blk=b.time_blk AND a.fl_date=b.date;
+
+UPDATE table2010 SET holidays=(SELECT holiday.holidays 
+FROM holiday WHERE holiday.UNIQUE_CARRIER=table2010.unique_carrier AND holiday.date=table2010.fl_date)
+WHERE table2010.fl_date  IN(SELECT table2010.fl_date FROM
+(SELECT table2010.fl_date FROM table2010 
+INNER JOIN holiday ON holiday.UNIQUE_CARRIER=table2010.unique_carrier AND holiday.date=table2010.fl_date)a)
