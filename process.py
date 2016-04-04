@@ -14,6 +14,7 @@ def processdata(file):
 
     # Remove records where delay information is missing
     df = df[df.arr_del15 != 'null']
+    df = df[df.dep_time_blk != 'null']
     df.arr_del15 = df.arr_del15.astype('float')
     # print("After removing missing records, length is", len(df))
 
@@ -33,7 +34,7 @@ def processdata(file):
     # print("Percentage of delay flights is", delay/total)
     # print()
     return df[['id', 'year', 'month', 'day_of_month', 'fl_date', 'unique_carrier', 'tail_num', 'fl_num',
-               'origin_airport_id', 'dest_airport_id', 'crs_dep_time', 'taxi_out', 'taxi_in', 'arr_del15',
+               'origin_airport_id', 'dest_airport_id', 'crs_dep_time', 'dep_time_blk', 'taxi_out', 'taxi_in', 'arr_del15',
                'arr_delay_group', 'air_time', 'distance_group', 'carrier_delay', 'weather_delay',
                'nas_delay', 'security_delay', 'late_aircraft_delay']]
 
