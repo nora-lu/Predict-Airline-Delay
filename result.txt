@@ -1,4 +1,5 @@
 #############
+Random forest
 No cross val, train data: 2011-2015.6.23 ((19273751, 194)), test data: 2015.6.24-6.30 ((82739, 194))
 
 Confusion matrix
@@ -8,5 +9,17 @@ Confusion matrix
 (0.64812085482682391, 0.17730067533514768, 0.27843292441630391, None)
 
 precision = 0.65, recall = 0.18, F1 = 0.28, accuracy = 0.78
+
+#############
+SGDClassifier
+No cross val, train data: 2010-2015.6.23 ((23884137, 199)), test data: 2015.6.24-6.30 ((82739, 199))
+
+Confusion matrix
+       0     1
+0  60382  2515
+1  15802  4040
+(0.61632341723874906, 0.2036085072069348, 0.30609538962760918, None)
+
+precision = 0.62, recall = 0.20, F1 = 0.31, accuracy = 0.78
 
 #############
