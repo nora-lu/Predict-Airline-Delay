@@ -44,3 +44,17 @@ Confusion matrix
 (0.50437509679417691, 0.32347536750099326, 0.39416036308623298, None)
 
 precision = 0.50, recall = 0.32, F1 = 0.39, accuracy = 0.75
+
+##############
+last 150000 records as test data
+features: cols = ['taxi_out', 'taxi_in', 'dep_temp_f', 'dep_wind_speed_mph',
+                        'dep_conditions', 'arr_temp_f', 'arr_wind_speed_mph',
+                        'arr_conditions', 'crs_dep_hour', 'arr_hour', 'origin']
+
+Confusion matrix
+       0      1
+0  72906  40024
+1  15120  21950
+(0.35418078549068965, 0.59212301052063665, 0.44323734905698475, None)
+
+precision = 0.35, recall = 0.59, F1 = 0.44, accuracy = 0.63
